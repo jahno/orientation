@@ -1,0 +1,29 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+/*
+TURBOLINKS
+*/
+
+
+/*
+ * override the default CSS as an example
+ */
+
+#loading-bar .bar {
+    background: red;
+}
+#loading-bar-spinner .spinner-icon {
+    border-top-color:  red;
+    border-left-color: red;
+}
+#loading-bar .peg {
+    -moz-box-shadow: #2c3e50 1px 0 6px 1px;
+    -ms-box-shadow: #2c3e50 1px 0 6px 1px;
+    -webkit-box-shadow: #2c3e50 1px 0 6px 1px;
+    box-shadow: #2c3e50 1px 0 6px 1px;
+}
+
+/*
+TURBOLINKS
+*/
