@@ -73,7 +73,9 @@ Route::post('/profil',[
     'as' => 'infos_profil',
     'uses'=> 'HomeController@mise_a_jour_avatar',
 ]);
-//  Route permettant l'upload de l'image du profil
+//  Route permettant la modif du profil
+ Route::get('/edit','HomeController@view_edit')->name('edit');
+ Route::post('/edit','HomeController@edit')->name('edit');
 
 
 Auth::routes();

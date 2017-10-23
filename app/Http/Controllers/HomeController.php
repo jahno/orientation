@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use  App\User;
+use App\Http\Requests\UserRequest;
+
 
 //Importation du namespace Auth
 use Auth;
@@ -35,7 +38,8 @@ class HomeController extends Controller
 
     public function annonces_profil()
     {
-        return view('Layouts.profil', array('user' => Auth::user()) );
+       return view('Layouts.profil', array('user' => Auth::user()) );
+       
     }
 
  public function mise_a_jour_avatar(Request $request)
@@ -52,7 +56,52 @@ class HomeController extends Controller
 
        }
         return view('Layouts.profil', array('user' => Auth::user()) );
+        
+       // $this->profile();
     }
 
+
+    public function view_edit(){
+       return view('Layouts.edit')->withUser(Auth::user());
+       
+    }
+
+    public function edit(UserRequest $request){
+    
+    $image = User::Generate_image($request->file('avatar'));        
+     User::findOrFail(Auth::user()->id)
+     ->update([
+           'name'=>$request->name,
+           'email'=>$request->email,
+           'password'=>$request->password,
+           'avatar'=>$image,
+           'nom_eleve'=>$request->nom,
+           'prenom_eleve'=>$request->prenom,
+           'age'=>$request->age,
+           'ville_residence_eleve'=>$request->vile,
+           'region_residence_eleve'=>$request->region,
+           'contact_eleve'=>$request->contact,
+           'cv_eleve'=>$request->cv,
+           'experience_professionnel_eleve'=>$request->experience
+      ]);
+
+
+     
+
+
+
+
+
+
+ 
+
+        
+    }
+
+
+
+private function profile($page='profil'){
+  return view('Layouts.'.$page)->withUser(Auth::user());
+ }
 
 }

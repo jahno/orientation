@@ -114,6 +114,9 @@
                     @guest
 
                         <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+
+                        
+
                         <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
                     @else
 
@@ -149,6 +152,9 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ route('infos_profil') }}"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                             
+                             <li><a href="{{ route('edit') }}"><span class="glyphicon glyphicon-user"></span> Modifier mon profile</a></li>
+
                                     <li>
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
@@ -160,6 +166,8 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
+                                   
                                 </ul>
                             </li>
                             @endguest
