@@ -6,11 +6,12 @@
 
   <form action="{{ route('edit') }}" method="post" enctype="multipart/form-data">
     		{{csrf_field()}}
+
   
 
 <div class="form-group">
     <label for="nom">Pseudo:</label>
-    <input type="text" class="form-control  is-invalide" id="nom" name="name">
+    <input type="text" class="form-control  is-invalide" id="nom" name="name" value="{{ $user->name }}">
      {!! $errors->first('name',' <div class="alert alert-danger" role="alert">
    :message
 </div> ')  !!}
@@ -19,7 +20,7 @@
 
   <div class="form-group">
     <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email" name="email">
+    <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
   </div>
 
   <div class="form-group">
@@ -43,13 +44,13 @@
 
 <div class="form-group">
     <label for="nom">nom:</label>
-    <input type="text" class="form-control" id="nom" name="nom">
+    <input type="text" class="form-control" id="nom" name="nom" >
   </div>
 
 
   <div class="form-group">
     <label for="prenom">prenom</label>
-    <input type="text" class="form-control" id="prenom" name="prenom">
+    <input type="text" class="form-control" id="prenom" name="prenom" >
   </div>
 
 

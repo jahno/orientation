@@ -57,7 +57,7 @@ class HomeController extends Controller
        }
         return view('Layouts.profil', array('user' => Auth::user()) );
         
-       // $this->profile();
+      
     }
 
 
@@ -85,7 +85,7 @@ class HomeController extends Controller
            'experience_professionnel_eleve'=>$request->experience
       ]);
 
- return view('Layouts.'.$page)->withUser(Auth::user());
+ return view('Layouts.profil')->withUser(Auth::user());
 
         
     }
