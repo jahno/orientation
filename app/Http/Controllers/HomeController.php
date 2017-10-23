@@ -73,7 +73,7 @@ class HomeController extends Controller
      ->update([
            'name'=>$request->name,
            'email'=>$request->email,
-           'password'=>$request->password,
+           'password'=> bcrypt($request->password),
            'avatar'=>$image,
            'nom_eleve'=>$request->nom,
            'prenom_eleve'=>$request->prenom,
