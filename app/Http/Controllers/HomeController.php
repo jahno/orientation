@@ -85,23 +85,13 @@ class HomeController extends Controller
            'experience_professionnel_eleve'=>$request->experience
       ]);
 
-
-     
-
-
-
-
-
-
- 
+ return view('Layouts.'.$page)->withUser(Auth::user());
 
         
     }
 
 
 
-private function profile($page='profil'){
-  return view('Layouts.'.$page)->withUser(Auth::user());
- }
+
 
 }
